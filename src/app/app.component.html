@@ -2,11 +2,20 @@
 <nav class="navbar">
   <div class="container">
     <a href="#" class="logo">Omckar Badekaar<span class="gradient-text">.</span></a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
+    
+    <!-- Mobile Hamburger Menu Button -->
+    <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle Navigation Menu" [class.active]="isMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <div class="nav-links" [class.active]="isMenuOpen">
+      <a href="#about" (click)="closeMenu()">About</a>
+      <a href="#experience" (click)="closeMenu()">Experience</a>
+      <a href="#projects" (click)="closeMenu()">Projects</a>
+      <a href="#education" (click)="closeMenu()">Education</a>
+      <a href="#contact" (click)="closeMenu()">Contact</a>
     </div>
   </div>
 </nav>
@@ -59,7 +68,7 @@
 
 <!-- Experience Section -->
 <section id="experience" class="container"><br><br>
-  <h2 class="section-title animate-up">Experience</h2>
+  <h2 class="section-title animate-up"  >Experience</h2>
   
   <div class="glass-card animate-up delay-1">
     <div class="timeline">
@@ -99,6 +108,103 @@
   </div>
 </section>
 
+<!-- Projects Section -->
+<section id="projects" class="container"><br><br>
+  <h2 class="section-title animate-up">Projects</h2>
+  
+  <div class="glass-card animate-up delay-1">
+    <div class="projects-list">
+      <!-- Project 1: URL Manager -->
+      <div class="project-item">
+        <div class="project-content">
+          <div class="project-header">
+            <h3>URL Manager</h3>
+            <div class="project-links">
+              <a href="https://github.com/Omckar/url-manager-frontend" class="project-link" target="_blank">Frontend</a>
+              <span class="link-divider">|</span>
+              <a href="https://github.com/Omckar/url-manager-backend" class="project-link" target="_blank">Backend</a>
+              <span class="link-divider">|</span>
+              <a href="https://url-mng.vercel.app/" class="project-link" target="_blank">Demo</a>
+            </div>
+          </div>
+          <p>A full-stack URL management and shortening platform. Offers a comprehensive analytics dashboard, tag organization, and real-time link tracking with secure redirection.</p>
+          <div class="project-tags">
+            <span class="project-tag">Angular</span>
+            <span class="project-tag">NestJS</span>
+            <span class="project-tag">Sequelize</span>
+            <span class="project-tag">MySQL</span>
+            <span class="project-tag">TypeScript</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 2: AI Portfolio Builder -->
+      <div class="project-item">
+        <div class="project-content">
+          <div class="project-header">
+            <h3>AI Portfolio Builder</h3>
+            <div class="project-links">
+              <a href="https://github.com/Omckar/ai-portfolio-builder-frontend" class="project-link" target="_blank">Frontend</a>
+              <span class="link-divider">|</span>
+              <a href="https://github.com/Omckar/ai-portfolio-builder-backend" class="project-link" target="_blank">Backend</a>
+              <span class="link-divider">|</span>
+              <a href="https://ai-portfolio-resume-builder.vercel.app/" class="project-link" target="_blank">Demo</a>
+            </div>
+          </div>
+          <p>An intelligent platform that automatically generates and deploys premium developer portfolio websites using AI analysis of user resumes.</p>
+          <div class="project-tags">
+            <span class="project-tag">Angular</span>
+            <span class="project-tag">NestJS</span>
+            <span class="project-tag">Sequelize</span>
+            <span class="project-tag">MySQL</span>
+            <span class="project-tag">TypeScript</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 3: ArchFlow -->
+      <div class="project-item">
+        <div class="project-content">
+          <div class="project-header">
+            <h3>ArchFlow</h3>
+            <div class="project-links">
+              <a href="https://github.com/Omckar/archflow" class="project-link" target="_blank">GitHub</a>
+              <span class="link-divider">|</span>
+              <a href="https://archflow-eight-alpha.vercel.app/" class="project-link" target="_blank">Demo</a>
+            </div>
+          </div>
+          <p>An interactive, developer-focused tool for modeling software architecture and visualizing complex workflows. Supports drag-and-drop elements and layout exporting.</p>
+          <div class="project-tags">
+            <span class="project-tag">Angular</span>
+            <span class="project-tag">TypeScript</span>
+            <span class="project-tag">SCSS</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 4: NinjaTyper -->
+      <div class="project-item">
+        <div class="project-content">
+          <div class="project-header">
+            <h3>NinjaTyper</h3>
+            <div class="project-links">
+              <a href="https://github.com/Omckar/ninjatyper" class="project-link" target="_blank">GitHub</a>
+              <span class="link-divider">|</span>
+              <a href="https://ninjatyper.vercel.app/" class="project-link" target="_blank">Demo</a>
+            </div>
+          </div>
+          <p>An interactive and gamified typing test web app designed to improve typing speed and accuracy. Features real-time WPM calculation and custom progress charts.</p>
+          <div class="project-tags">
+            <span class="project-tag">Angular</span>
+            <span class="project-tag">TypeScript</span>
+            <span class="project-tag">SCSS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Education Section -->
 <section id="education" class="container"><br><br>
   <h2 class="section-title animate-up">Education</h2>
@@ -126,8 +232,8 @@
   
   <div class="contact-wrapper">
     <div class="contact-info animate-up delay-1">
-      <h3 style="font-size: 2rem; margin-bottom: 1rem;">Get in touch</h3>
-      <p style="margin-bottom: 2rem;">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+      <h3>Get in touch</h3>
+      <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
       
       <div class="info-item">
         <div class="icon"><i class="fas fa-envelope"></i></div>

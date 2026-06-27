@@ -10,4 +10,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'portfolio';
   currentYear = new Date().getFullYear();
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
 }
