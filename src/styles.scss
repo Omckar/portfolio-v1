@@ -63,39 +63,37 @@ body::after {
 
 body::before {
   background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%);
-  top: -15%;
-  left: -15%;
-  animation: floatBlue 25s infinite alternate ease-in-out;
+  top: calc(50vh - 25vw);
+  left: -10vw;
+  animation: pulseBlue 15s infinite alternate ease-in-out;
 }
 
 body::after {
   background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
-  bottom: -15%;
-  right: -15%;
-  animation: floatPurple 30s infinite alternate ease-in-out;
+  top: calc(30vh - 25vw);
+  right: -10vw;
+  animation: pulsePurple 18s infinite alternate ease-in-out;
 }
 
-@keyframes floatBlue {
+@keyframes pulseBlue {
   0% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(15vw, 15vh) scale(1.15);
+    transform: scale(0.85);
+    opacity: 0.08;
   }
   100% {
-    transform: translate(-5vw, 25vh) scale(0.95);
+    transform: scale(1.2);
+    opacity: 0.14;
   }
 }
 
-@keyframes floatPurple {
+@keyframes pulsePurple {
   0% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(-15vw, -15vh) scale(0.85);
+    transform: scale(0.85);
+    opacity: 0.08;
   }
   100% {
-    transform: translate(5vw, -25vh) scale(1.05);
+    transform: scale(1.2);
+    opacity: 0.14;
   }
 }
 
